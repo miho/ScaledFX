@@ -3,7 +3,7 @@ ext.publishing.bintray = [:]
 
 ext.publishing.artifactId =  project.name.toLowerCase()
 ext.publishing.groupId    =  'eu.mihosoft.jfx.scaledfx'
-ext.publishing.versionId  =  '0.1'
+ext.publishing.versionId  =  '0.2'
 
 ext.publishing.developerName         = 'Michael Hoffer'
 ext.publishing.developerAlias        = 'miho'
