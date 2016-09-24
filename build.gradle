@@ -1,0 +1,33 @@
+plugins {
+    id "com.github.hierynomus.license" version "0.13.1"
+    id 'maven-publish'
+    id "net.nemerosa.versioning" version "2.4.0"
+    id 'com.jfrog.bintray' version '1.7.1'
+}
+
+apply plugin: 'java'
+apply from: 'gradle/publishing.gradle'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'eu.mihosoft.scaledfx.Main'
+}
+
+task wrapper(type: Wrapper, description: 'Creates and deploys the Gradle wrapper to the current directory.') {
+    gradleVersion = '3.1'
+}
+
+license {
+    header = rootProject.file('config/HEADER')
+    strictCheck = true
+    ignoreFailures = true
+    mapping {
+        java   = 'SLASHSTAR_STYLE'
+        groovy = 'SLASHSTAR_STYLE'
+        fxml   = 'XML_STYLE'
+    }
+    ext.year   = '2016-2016'
+    ext.author = 'Michael Hoffer <info@michaelhoffer.de>'
+}
