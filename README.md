@@ -3,5 +3,5 @@
 
 JavaFX pane for scaling arbitrary content nodes (used in Vworkflows)
 
-[![Sample](https://media.giphy.com/media/l3vR99nMoId6DEOeA/giphy.gif)]
+![Sample](https://media.giphy.com/media/l3vR99nMoId6DEOeA/giphy.gif)
 
