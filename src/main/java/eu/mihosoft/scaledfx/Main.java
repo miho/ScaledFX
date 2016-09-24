@@ -27,10 +27,21 @@
  */
 package eu.mihosoft.scaledfx;
 
-public class Main {
+import javafx.application.Application;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class Main extends Application {
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        ScalableContentPane scp = new ScalableContentPane();
+        scp.setContent(new Button("Scaled Button"));
     }
 }

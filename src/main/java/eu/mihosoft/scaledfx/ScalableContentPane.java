@@ -108,6 +108,13 @@ public class ScalableContentPane extends Region {
         });
     }
 
+    public ScalableContentPane(Node content) {
+        this();
+        setContent(content);
+    }
+    
+    
+
     /**
      * @return the content pane
      */
@@ -118,11 +125,11 @@ public class ScalableContentPane extends Region {
     /**
      * Defines the content pane of this scalable pane.
      *
-     * @param contentPane pane to define
+     * @param content content node to scale
      */
-    public final void setContent(Pane contentPane) {
-        contentPaneProperty.setValue(contentPane);
-        contentPane.setManaged(false);
+    public final void setContent(Node content) {
+        contentPaneProperty.setValue(content);
+        content.setManaged(false);
         initContentPaneListener();
 
         contentScaleTransform = new Scale(1, 1);
@@ -131,7 +138,7 @@ public class ScalableContentPane extends Region {
         getContentScaleTransform().setPivotZ(0);
         getContent().getTransforms().add(getContentScaleTransform());
 
-        getChildren().add(contentPane);
+        getChildren().add(content);
 
         ChangeListener<Number> changeListener = (ov, oldValue, newValue) -> {
             requestScale();
