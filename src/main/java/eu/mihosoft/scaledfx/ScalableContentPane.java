@@ -108,6 +108,10 @@ public class ScalableContentPane extends Region {
         });
     }
 
+    /**
+     * Creates a new instance with the specified content node.
+     * @param content content node to scale
+     */
     public ScalableContentPane(Node content) {
         this();
         setContent(content);
@@ -268,10 +272,18 @@ public class ScalableContentPane extends Region {
 
     }
 
+    /**
+     * Requests scale computation. <b>Note:</b> Usually, this will be performed
+     * automatically. If calling this method is necessary, it is likely that you
+     * found a bug that should probably be reported.
+     */
     public void requestScale() {
         computeScale();
     }
 
+    /**
+     * Resets the scale that is applied to the content node.
+     */
     public void resetScale() {
 
         if (manualReset) {

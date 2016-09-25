@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// publishing information
+// -----------------------------------------------------------------------------
+publishing {
+    artifactId =  project.name.toLowerCase()
+    groupId    =  'eu.mihosoft.jfx.scaledfx'
+    versionId  =  '0.3'
+
+    developerName     = 'Michael Hoffer'
+    developerAlias    = 'miho'
+    developerEmail    = 'info@michaelhoffer.de'
+    inceptionYear     = '2016'
+
+    bintray {
+        repo          = 'ScaledFX'
+        userORg       = 'miho'
+        name          = project.name
+    }
+
+    desc              = 'JavaFX Pane for scaling arbitrary content nodes.'
+    license           = 'BSD 2-Clause'
+    licenseUrl        = 'https://github.com/miho/ScaledFX/blob/master/LICENSE.txt'
+    labels            = ['javafx', 'java', 'vworkflows', 'vrl']
+    websiteUrl        = 'https://github.com/miho/ScaledFX/wiki'
+    issueTrackerUrl   = 'https://github.com/miho/ScaledFX/issues'
+    vcsUrl            = 'git@github.com:miho/ScaledFX.git'
+}
+

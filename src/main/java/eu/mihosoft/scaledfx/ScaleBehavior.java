@@ -28,10 +28,17 @@
 package eu.mihosoft.scaledfx;
 
 /**
- *
+ * Defines the scale behavior of the {@link ScalableContentPane}.
  * @author Michael Hoffer &lt;info@michaelhoffer.de&gt;
  */
 public enum ScaleBehavior {
+    /**
+     * Always scale the content.
+     */
     ALWAYS,
+    /**
+     * Rescale content only if requested by the layout properties of the content
+     * node.
+     */
     IF_NECESSARY
 }
