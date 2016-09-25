@@ -6,7 +6,7 @@ ext.publishing.bintray = [:]
 
 ext.publishing.pomName =  ext.publishing.artifactId
 
-apply from: "project-info.gradle"
+apply from: "gradle/project-info.gradle"
 
 // -----------------------------------------------------------------------------
 // Performs publishing
