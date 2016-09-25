@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 ext.publishing.artifactId =  project.name.toLowerCase()
 ext.publishing.groupId    =  'eu.mihosoft.jfx.scaledfx'
-ext.publishing.versionId  =  '0.3'
+ext.publishing.versionId  =  '0.4'
 
 ext.publishing.developerName         = 'Michael Hoffer'
 ext.publishing.developerAlias        = 'miho'
@@ -11,7 +11,7 @@ ext.publishing.developerEmail        = 'info@michaelhoffer.de'
 ext.publishing.inceptionYear         = '2016'
 
 ext.publishing.bintray.repo          = 'ScaledFX'
-ext.publishing.bintray.userORg       = 'miho'
+ext.publishing.bintray.userOrg       = 'miho'
 ext.publishing.bintray.name          = project.name
 
 ext.publishing.desc                  = 'JavaFX Pane for scaling arbitrary content nodes.'

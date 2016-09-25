@@ -104,7 +104,7 @@ bintray {
     publications = ['mavenCustom']
     pkg {
         repo                  = publishing.bintray.repo
-        userOrg               = publishing.bintray.userORg
+        userOrg               = publishing.bintray.userOrg
         name                  = publishing.bintray.name
         desc                  = publishing.desc
         licenses              = [publishing.license]
