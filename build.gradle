@@ -32,3 +32,12 @@ license {
     ext.year   = '2016-2016'
     ext.author = 'Michael Hoffer <info@michaelhoffer.de>'
 }
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile 'org.testfx:testfx-core:4.0.4-alpha'
+    testCompile 'org.testfx:testfx-junit:4.0.4-alpha'
+}

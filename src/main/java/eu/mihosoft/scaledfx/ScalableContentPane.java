@@ -27,6 +27,7 @@
  */
 package eu.mihosoft.scaledfx;
 
+import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
@@ -51,6 +52,7 @@ import javafx.scene.transform.Scale;
  *
  * @author Michael Hoffer &lt;info@michaelhoffer.de&gt;
  */
+@DefaultProperty("content")
 public class ScalableContentPane extends Region {
 
     private Scale contentScaleTransform;
