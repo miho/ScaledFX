@@ -1,8 +1,9 @@
 plugins {
-    id "com.github.hierynomus.license" version "0.13.1"
+    id 'com.github.hierynomus.license' version '0.13.1'
     id 'maven-publish'
-    id "net.nemerosa.versioning" version "2.4.0"
-    id 'com.jfrog.bintray' version '1.7.1'
+    id 'net.nemerosa.versioning' version '2.4.0'
+    id 'com.jfrog.bintray' version '1.7.2'
+    id 'com.github.ben-manes.versions' version '0.13.0'
 }
 
 apply plugin: 'java'
@@ -30,4 +31,13 @@ license {
     }
     ext.year   = '2016-2016'
     ext.author = 'Michael Hoffer <info@michaelhoffer.de>'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile 'org.testfx:testfx-core:4.0.4-alpha'
+    testCompile 'org.testfx:testfx-junit:4.0.4-alpha'
 }
