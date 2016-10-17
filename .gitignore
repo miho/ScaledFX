@@ -1,1 +1,5 @@
-/.nb-gradle/
+.nb-gradle/
+.idea/
+.gradle/
+out/
+build/
