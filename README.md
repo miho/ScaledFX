@@ -33,3 +33,24 @@ public class Main extends Application {
 }
 ```
 
+## Notes on JDK 8
+
+Version `<= 0.4` is compatible with JDK 8 (probably also 9 and 10)
+
+## Notes on JDK >=11
+
+Version `>= 0.4` is compatible with JDK >= 11. Just use the [JavaFx Gradle plugin](https://openjfx.io/openjfx-docs/#gradle) via
+
+```gradle
+plugins {
+  id 'org.openjfx.javafxplugin' version '0.0.7' // use latest version
+}
+```
+
+and declare the deoendency to the `controls` module.
+
+```gradle
+javafx {
+    modules = [ 'javafx.controls' ]
+}
+```
