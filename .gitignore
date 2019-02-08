@@ -3,3 +3,8 @@
 .gradle/
 out/
 build/
+/bin/
+/.classpath
+/.vscode/
+/.settings/
+/.project

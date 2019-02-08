@@ -2,23 +2,30 @@ plugins {
     id 'com.github.hierynomus.license' version '0.13.1'
     id 'maven-publish'
     id 'net.nemerosa.versioning' version '2.4.0'
-    id 'com.jfrog.bintray' version '1.7.2'
+    id 'com.jfrog.bintray' version '1.8.4'
     id 'com.github.ben-manes.versions' version '0.13.0'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
 }
 
+// def osName = System.getProperty("os.name").toLowerCase()
+// ext.platform = osName.contains("mac") ? 'mac' : osName.contains("windows") ? 'win' : osName;
+
 apply plugin: 'java'
+apply plugin: 'application'
 apply from: 'gradle/publishing.gradle'
 
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 if (!hasProperty('mainClass')) {
     ext.mainClass = 'eu.mihosoft.scaledfx.Main'
 }
 
-task wrapper(type: Wrapper, description: 'Creates and deploys the Gradle wrapper to the current directory.') {
-    gradleVersion = '3.1'
+wrapper {
+    gradleVersion = '5.1'
 }
+
+description = 'JavaFX Region for scaling arbitrary content nodes.'
 
 license {
     header = rootProject.file('config/HEADER')
@@ -29,7 +36,7 @@ license {
         groovy = 'SLASHSTAR_STYLE'
         fxml   = 'XML_STYLE'
     }
-    ext.year   = '2016-2016'
+    ext.year   = '2016-2019'
     ext.author = 'Michael Hoffer <info@michaelhoffer.de>'
 }
 
@@ -38,6 +45,31 @@ repositories {
 }
 
 dependencies {
-    testCompile 'org.testfx:testfx-core:4.0.4-alpha'
-    testCompile 'org.testfx:testfx-junit:4.0.4-alpha'
+    testCompile "org.testfx:testfx-core:4.0.15-alpha"
+    testCompile 'org.testfx:testfx-junit:4.0.15-alpha'
 }
+
+compileJava {
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.controls'
+        ]
+    }
+}
+
+run {
+    doFirst {
+        jvmArgs = [
+                '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.controls',
+                "-Xmx12000m"
+        ]
+    }
+}
+
+javafx {
+    modules = [ 'javafx.controls', /*TODO declare as test dependency only*/'javafx.fxml' ]
+}
+
+mainClassName = 'eu.mihosoft.scaledfx.Main'

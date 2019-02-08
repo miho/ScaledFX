@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2016 Michael Hoffer <info@michaelhoffer.de>. All rights reserved.
+ * Copyright 2016-2019 Michael Hoffer <info@michaelhoffer.de>. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
@@ -135,7 +135,7 @@ public class ScalableContentPane extends Region {
      */
     public final void setContent(Node content) {
         contentPaneProperty.setValue(content);
-        content.setManaged(false);
+        // content.setManaged(false);
         initContentPaneListener();
 
         contentScaleTransform = new Scale(1, 1);
@@ -152,6 +152,7 @@ public class ScalableContentPane extends Region {
 
         getContentScaleTransform().setOnTransformChanged((event) -> {
             requestLayout();
+            setNeedsLayout(false);
         });
 
         minScaleXProperty().addListener(changeListener);
@@ -182,6 +183,7 @@ public class ScalableContentPane extends Region {
     @Override
     protected void layoutChildren() {
         super.layoutChildren();
+        computeScale();
     }
 
     private void computeScale() {
@@ -279,6 +281,7 @@ public class ScalableContentPane extends Region {
      * automatically. If calling this method is necessary, it is likely that you
      * found a bug that should probably be reported.
      */
+    @Deprecated
     public void requestScale() {
         computeScale();
     }
@@ -350,23 +353,24 @@ public class ScalableContentPane extends Region {
         final ChangeListener<Bounds> boundsListener =
                 (ov, oldValue, newValue) -> {
             if (isAutoRescale()) {
-                setNeedsLayout(false);
                 if (getContent() instanceof Region) {
                     ((Region) getContent()).requestLayout();
                 }
-
+                
                 requestLayout();
+                setNeedsLayout(false);
             }
         };
 
         final ChangeListener<Number> numberListener =
                 (ov, oldValue, newValue) -> {
             if (isAutoRescale()) {
-                setNeedsLayout(false);
                 if (getContent() instanceof Parent) {
                     ((Parent) getContent()).requestLayout();
                 }
+
                 requestLayout();
+                setNeedsLayout(false);
             }
         };
 

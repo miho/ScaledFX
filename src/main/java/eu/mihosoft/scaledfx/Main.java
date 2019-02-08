@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2016 Michael Hoffer <info@michaelhoffer.de>. All rights reserved.
+ * Copyright 2016-2019 Michael Hoffer <info@michaelhoffer.de>. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
@@ -42,12 +42,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ScalableContentPane scp = new ScalableContentPane();
-        scp.setContent(new Button("Scaled Button"));
-        
-        Scene scene = new Scene(scp);
-        
-        primaryStage.setScene(scene);
+        ScalableContentPane scp = 
+            new ScalableContentPane(new Button("Scaled Button"));
+
+        primaryStage.setScene(new Scene(scp));
         primaryStage.setTitle("Scalable Content Pane Demo");
         primaryStage.show();
     }
