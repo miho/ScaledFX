@@ -39,7 +39,7 @@ Version `<= 0.4` is compatible with JDK 8 (probably also 9 and 10)
 
 ## Notes on JDK >=11
 
-Version `>= 0.4` is compatible with JDK >= 11. Just use the [JavaFx Gradle plugin](https://openjfx.io/openjfx-docs/#gradle) via
+Version `>= 0.5` is compatible with JDK >= 11. Just use the [JavaFx Gradle plugin](https://openjfx.io/openjfx-docs/#gradle) via
 
 ```gradle
 plugins {
