@@ -73,3 +73,9 @@ javafx {
 }
 
 mainClassName = 'eu.mihosoft.scaledfx.Main'
+
+jar {
+    manifest {
+        attributes('Automatic-Module-Name': 'eu.mihosoft.scaledfx')
+    }
+}
