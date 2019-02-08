@@ -21,12 +21,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ScalableContentPane scp = new ScalableContentPane();
-        scp.setContent(new Button("Scaled Button"));
+        ScalableContentPane scp = 
+            new ScalableContentPane(new Button("Scaled Button"));
         
-        Scene scene = new Scene(scp);
-        
-        primaryStage.setScene(scene);
+        primaryStage.setScene(new Scene(scp));
         primaryStage.setTitle("Scalable Content Pane Demo");
         primaryStage.show();
     }
