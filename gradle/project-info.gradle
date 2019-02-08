@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 ext.publishing.artifactId =  project.name.toLowerCase()
 ext.publishing.groupId    =  'eu.mihosoft.jfx.scaledfx'
-ext.publishing.versionId  =  '0.6'
+ext.publishing.versionId  =  '0.7-SNAPSHOT'
 
 ext.publishing.developerName         = 'Michael Hoffer'
 ext.publishing.developerAlias        = 'miho'
