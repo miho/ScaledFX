@@ -36,7 +36,7 @@ license {
         groovy = 'SLASHSTAR_STYLE'
         fxml   = 'XML_STYLE'
     }
-    ext.year   = '2016-2019'
+    ext.year   = '2016-'+new java.text.SimpleDateFormat("yyyy").format(new Date())
     ext.author = 'Michael Hoffer <info@michaelhoffer.de>'
 }
 
