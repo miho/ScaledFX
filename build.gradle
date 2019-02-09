@@ -49,24 +49,11 @@ dependencies {
     testCompile 'org.testfx:testfx-junit:4.0.15-alpha'
 }
 
-compileJava {
-    doFirst {
-        options.compilerArgs = [
-                '--module-path', classpath.asPath,
-                '--add-modules', 'javafx.controls'
-        ]
-    }
-}
-
-run {
-    doFirst {
-        jvmArgs = [
-                '--module-path', classpath.asPath,
-                '--add-modules', 'javafx.controls',
-                "-Xmx12000m"
-        ]
-    }
-}
+// run {
+//     doFirst {
+//         jvmArgs += ["-Xmx12000m" ]
+//     }
+// }
 
 javafx {
     modules = [ 'javafx.controls', /*TODO declare as test dependency only*/'javafx.fxml' ]
