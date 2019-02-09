@@ -1,5 +1,6 @@
 # ScaledFX
-[![Build Status](https://travis-ci.org/miho/ScaledFX.svg?branch=master)](https://travis-ci.org/miho/ScaledFX) [ ![Download](https://api.bintray.com/packages/miho/ScaledFX/ScaledFX/images/download.svg) ](https://bintray.com/miho/ScaledFX/ScaledFX/_latestVersion)
+[![Build Status](https://travis-ci.org/miho/ScaledFX.svg?branch=master)](https://travis-ci.org/miho/ScaledFX) [ ![Download](https://api.bintray.com/packages/miho/ScaledFX/ScaledFX/images/download.svg) ](https://bintray.com/miho/ScaledFX/ScaledFX/_latestVersion) [![Javadocs](https://www.javadoc.io/badge/eu.mihosoft.jfx.scaledfx/scaledfx.svg?color=blue)](https://www.javadoc.io/doc/eu.mihosoft.jfx.scaledfx/scaledfx)
+
 
 JavaFX pane for scaling arbitrary content nodes (used in Vworkflows) by applying scale transformations. The `ScalableContentPane` scales its content to always fit the container bounds.  
 
@@ -31,10 +32,6 @@ public class Main extends Application {
 }
 ```
 
-## Notes on JDK 8
-
-Version `<= 0.4` is compatible with JDK 8 (probably also 9 and 10)
-
 ## Notes on JDK >=11
 
 Version `>= 0.5` is compatible with JDK >= 11. Just use the [JavaFx Gradle plugin](https://openjfx.io/openjfx-docs/#gradle) via
@@ -45,10 +42,14 @@ plugins {
 }
 ```
 
-and declare the deoendency to the `controls` module.
+and declare the dependency to the `controls` module.
 
 ```gradle
 javafx {
     modules = [ 'javafx.controls' ]
 }
 ```
+
+## Notes on JDK 8
+
+Version `<= 0.4` is compatible with JDK 8 (probably also 9 and 10)
